@@ -31,9 +31,6 @@ int main(void) {
 	sort(vec_tmp.begin(), vec_tmp.end(), compare);
 	vec_tmp.erase(unique(vec_tmp.begin(), vec_tmp.end()), vec_tmp.end());
 
-	for (int i = 0; i < N; i++) {
-		auto it = lower_bound(vec_tmp.begin(), vec_tmp.end(), v[i]);
-		printf("%d ", it - vec_tmp.begin());
-	}
-	
+	for (int i = 0; i < N; i++) 
+		printf("%d ", lower_bound(vec_tmp.begin(), vec_tmp.end(), v[i]) - vec_tmp.begin());	
 }
